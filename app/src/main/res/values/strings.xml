@@ -1,0 +1,244 @@
+<!--<resources>-->
+<!--	<string name="app_name">-->
+<!--		Text_Summarizer-->
+<!--	</string>-->
+<!--    <string name="logo_text">-->
+<!--		Text Summarizer-->
+<!--	</string>-->
+<!--    <string name="skip_txt">-->
+<!--		Skip-->
+<!--	</string>-->
+<!--    <string name="welcome_to_">-->
+<!--		Welcome to Text Summarizer!-->
+<!--	</string>-->
+<!--    <string name="summarizema">-->
+<!--		Text Summarizer is here to make your reading experience easier and more efficient.-->
+<!--	</string>-->
+<!--    <string name="next_btn_description">-->
+<!--		next btn-->
+<!--	</string>-->
+<!--    <string name="save_and_share_topic">-->
+<!--		Save and Share-->
+<!--	</string>-->
+<!--    <string name="save_share_content">-->
+<!--		Keep your summaries organized and accessible. Save them for later reference or share them with others effortlessly.-->
+<!--	</string>-->
+<!--    <string name="summarize_with_ease_header">-->
+<!--		Summarize with Ease-->
+<!--	</string>-->
+<!--    <string name="summarize_with_ease_content">-->
+<!--		Say goodbye to lengthy texts! TextSummarizer simplifies complex content into concise summaries. Just paste or type the text and instant summary at your fingertips!-->
+<!--	</string>-->
+<!--    <string name="login_btn_txt">-->
+<!--		Log in-->
+<!--	</string>-->
+<!--    <string name="Signup_btn_txt">-->
+<!--		Sign up-->
+<!--	</string>-->
+<!--    <string name="title_activity_login">-->
+<!--		LoginActivity-->
+<!--	</string>-->
+<!--    <string name="prompt_email">-->
+<!--		Email-->
+<!--	</string>-->
+<!--    <string name="prompt_password">-->
+<!--		Password-->
+<!--	</string>-->
+<!--    <string name="action_sign_in">-->
+<!--		Sign in or register-->
+<!--	</string>-->
+<!--    <string name="action_sign_in_short">-->
+<!--		Sign in-->
+<!--	</string>-->
+<!--    <string name="welcome">-->
+<!--		"Welcome !"-->
+<!--	</string>-->
+<!--    <string name="invalid_username">-->
+<!--		Not a valid username-->
+<!--	</string>-->
+<!--    <string name="invalid_password">-->
+<!--		Password must be >5 characters-->
+<!--	</string>-->
+<!--    <string name="login_failed">-->
+<!--		"Login failed"-->
+<!--	</string>-->
+<!--    <string name="email_lable">-->
+<!--		Email-->
+<!--	</string>-->
+<!--    <string name="pwd_lable">-->
+<!--		Password-->
+<!--	</string>-->
+<!--    <string name="forgot_pass">-->
+<!--		Forgot password?-->
+<!--	</string>-->
+<!--    <string name="welcome_bac">-->
+<!--		Welcome Back-->
+<!--	</string>-->
+<!--    <string name="create_a_ne">-->
+<!--		Create a new account-->
+<!--	</string>-->
+<!--    <string name="login_to_ac">-->
+<!--		Login to access your account-->
+<!--	</string>-->
+<!--    <string name="title_login">-->
+<!--		Log in-->
+<!--	</string>-->
+<!--    <string name="by_continui">-->
+<!--		By continuing, you agree to our Terms of Service and Privacy Policy.-->
+<!--	</string>-->
+<!--    <string name="don_t_have_">-->
+<!--		Don\'t have an account?-->
+<!--	</string>-->
+<!--    <string name="title_signup">-->
+<!--		Sign Up-->
+<!--	</string>-->
+<!--    <string name="input_name_lable">-->
+<!--		Name-->
+<!--	</string>-->
+<!--    <string name="conf_pwd_lable">-->
+<!--		Conform Password-->
+<!--	</string>-->
+<!--    <string name="signup_text">-->
+<!--		Create a new account-->
+<!--	</string>-->
+<!--    <string name="title_signin">-->
+<!--		Sign In-->
+<!--	</string>-->
+<!--    <string name="already_have_acc">Already have an account?</string>-->
+<!--    <string name="summery_hint">Enter or past your text here</string>-->
+<!--    <string name="lonng">Long</string>-->
+<!--    <string name="short_txt">Short</string>-->
+<!--    <string name="summery_btn_txt">Summarize</string>-->
+<!--    <string name="past_btn_txt">Paste</string>-->
+<!--    <string name="max_value">max 1000 words</string>-->
+<!--    <string name="greeting_morning">Good morning</string>-->
+<!--    <string name="sample_result">sample_result </string>-->
+<!--    <string name="result_title_txt">Summarize Result</string>-->
+<!--    <string name="save_btn_txt">Save</string>-->
+<!--    <string name="save_summery_txt">Save Summary</string>-->
+<!--    <string name="cancel_btn_text">Cancel</string>-->
+<!--    <string name="description_hint_txt">Description </string>-->
+<!--    <string name="recent_summery_txt">Saved Summaries</string>-->
+<!--    <string name="clear_all_txt">Clear All</string>-->
+<!--    <string name="no_summery_title">No Saved Summaries</string>-->
+<!--    <string name="empty_summery_text">Tap summarize button for navigate to summarization page</string>-->
+<!--    <string name="save_card_date">Date : 23/12/2024</string>-->
+<!--    <string name="save_description_txt">saved description text</string>-->
+<!--    <string name="saved_summey_title">Saved Summaries</string>-->
+<!--    <string name="summery_topic">Summarization 01</string>-->
+<!--    <string name="remove_btn_txt">Remove Item</string>-->
+<!--    <string name="remove_itm_title">Remove item?</string>-->
+<!--    <string name="remove_itm_description">Are you sure want to remove this item?</string>-->
+<!--    <string name="description_txt">Description</string>-->
+<!--	<string name="description_contnt">"description content "</string>-->
+<!--	<string name="summery_txt">Summery</string>-->
+<!--	<string name="summrized_txt">"summrized text"</string>-->
+<!--	<string name="slider_description">Summary size increase</string>-->
+<!--The high number of travelers speaks to a sense of pandemic fatigue that many people are experiencing. For some, the desire to see family is worth the risk of potentially getting the coronavirus while traveling.</string>-->
+<!--	<string name="org_txt">A day after the Centers for Disease Control and Prevention urged Americans to stay home for Thanksgiving, more than one million people in the United States got on planes, marking the second day that more than a million people have flown since March. Nearly three million additional people have flown in the days since.-->
+
+<!--The high number of travelers speaks to a sense of pandemic fatigue that many people are experiencing. For some, the desire to see family is worth the risk of potentially getting the coronavirus while traveling.-->
+
+<!--	A day after the Centers for Disease Control and Prevention urged Americans to stay home for Thanksgiving, more than one million people in the United States got on planes, marking the second day that more than a million people have flown since March. Nearly three million additional people have flown in the days since.-->
+
+<!--The high number of travelers speaks to a sense of pandemic fatigue that many people are experiencing. For some, the desire to see family is worth the risk of potentially getting the coronavirus while traveling.</string>-->
+<!--	<string name="org_title">Original</string>-->
+<!--	<string name="chang_pwd_txt">Change Password</string>-->
+<!--	<string name="update_profile_txt">Update Profile</string>-->
+<!--	<string name="sample_name">shawon gazi</string>-->
+<!--	<string name="sample_email">shawon.gazi@gmail.com</string>-->
+<!--	<string name="save_changes_btn">Save Changes</string>-->
+<!--	<string name="old_pwd_txt">old password</string>-->
+<!--	<string name="new_pwd_txt">new password</string>-->
+<!--	<string name="conform_password_txt">conform password</string>-->
+<!--	<string name="change_pwd_btn">Change Password</string>-->
+<!--	<string name="slider_content_description">Summary length slider</string>-->
+<!--	<string name="default_web_client_id">637679639945-gltjvuvei9panbh3smmpoidru1uj5dsq.apps.googleusercontent.com</string>-->
+<!--	<string name="api_key">AIzaSyCiINESm4QjEAV8FGpJdBU91slTWDEOAWo</string>-->
+<!--	<string name="delete_icon_description">Delete</string>-->
+<!--</resources>-->
+
+
+
+<resources>
+    <string name="app_name">Text_Summarizer</string>
+    <string name="logo_text">Text Summarizer</string>
+    <string name="skip_txt">Skip</string>
+    <string name="welcome_to_">Welcome to Text Summarizer!</string>
+    <string name="summarizema">Text Summarizer is here to make your reading experience easier and more efficient.</string>
+    <string name="next_btn_description">next btn</string>
+    <string name="save_and_share_topic">Save and Share</string>
+    <string name="save_share_content">Keep your summaries organized and accessible. Save them for later reference or share them with others effortlessly.</string>
+    <string name="summarize_with_ease_header">Summarize with Ease</string>
+    <string name="summarize_with_ease_content">Say goodbye to lengthy texts! TextSummarizer simplifies complex content into concise summaries. Just paste or type the text and instant summary at your fingertips!</string>
+    <string name="login_btn_txt">Log in</string>
+    <string name="Signup_btn_txt">Sign up</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">Welcome!</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be &gt;5 characters</string>
+    <string name="login_failed">Login failed</string>
+    <string name="email_lable">Email</string>
+    <string name="pwd_lable">Password</string>
+    <string name="forgot_pass">Forgot password?</string>
+    <string name="welcome_bac">Welcome Back</string>
+    <string name="create_a_ne">Create a new account</string>
+    <string name="login_to_ac">Login to access your account</string>
+    <string name="title_login">Log in</string>
+    <string name="by_continui">By continuing, you agree to our Terms of Service and Privacy Policy.</string>
+    <string name="don_t_have_">Don\'t have an account?</string>
+    <string name="title_signup">Sign Up</string>
+    <string name="input_name_lable">Name</string>
+    <string name="conf_pwd_lable">Confirm Password</string>
+    <string name="signup_text">Create a new account</string>
+    <string name="title_signin">Sign In</string>
+    <string name="already_have_acc">Already have an account?</string>
+    <string name="summery_hint">Enter or paste your text here</string>
+    <string name="lonng">Long</string>
+    <string name="short_txt">Short</string>
+    <string name="summery_btn_txt">Summarize</string>
+    <string name="past_btn_txt">Paste</string>
+    <string name="max_value">max 1000 words</string>
+    <string name="greeting_morning">Good morning</string>
+    <string name="sample_result">sample_result</string>
+    <string name="result_title_txt">Summarize Result</string>
+    <string name="save_btn_txt">Save</string>
+    <string name="save_summery_txt">Save Summary</string>
+    <string name="cancel_btn_text">Cancel</string>
+    <string name="description_hint_txt">Description</string>
+    <string name="recent_summery_txt">Saved Summaries</string>
+    <string name="clear_all_txt">Clear All</string>
+    <string name="no_summery_title">No Saved Summaries</string>
+    <string name="empty_summery_text">Tap summarize button to navigate to summarization page</string>
+    <string name="save_card_date">Date: 23/12/2024</string>
+    <string name="save_description_txt">saved description text</string>
+    <string name="saved_summey_title">Saved Summaries</string>
+    <string name="summery_topic">Summarization 01</string>
+    <string name="remove_btn_txt">Remove Item</string>
+    <string name="remove_itm_title">Remove item?</string>
+    <string name="remove_itm_description">Are you sure you want to remove this item?</string>
+    <string name="description_txt">Description</string>
+    <string name="description_contnt">description content</string>
+    <string name="summery_txt">Summary</string>
+    <string name="summrized_txt">summarized text</string>
+    <string name="slider_description">Summary size increase</string>
+    <string name="org_txt">A day after the Centers for Disease Control and Prevention urged Americans to stay home for Thanksgiving, more than one million people in the United States got on planes, marking the second day that more than a million people have flown since March. Nearly three million additional people have flown in the days since. The high number of travelers speaks to a sense of pandemic fatigue that many people are experiencing. For some, the desire to see family is worth the risk of potentially getting the coronavirus while traveling.</string>
+    <string name="org_title">Original</string>
+    <string name="chang_pwd_txt">Change Password</string>
+    <string name="update_profile_txt">Update Profile</string>
+    <string name="sample_name">shawon gazi</string>
+    <string name="sample_email">shawon.gazi@gmail.com</string>
+    <string name="save_changes_btn">Save Changes</string>
+    <string name="old_pwd_txt">old password</string>
+    <string name="new_pwd_txt">new password</string>
+    <string name="conform_password_txt">confirm password</string>
+    <string name="change_pwd_btn">Change Password</string>
+    <string name="slider_content_description">Summary length slider</string>
+    <string name="default_web_client_id">637679639945-gltjvuvei9panbh3smmpoidru1uj5dsq.apps.googleusercontent.com</string>
+    <string name="api_key">AIzaSyCiINESm4QjEAV8FGpJdBU91slTWDEOAWo</string>
+    <string name="delete_icon_description">Delete</string>
+</resources>

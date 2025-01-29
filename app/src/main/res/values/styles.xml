@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <!-- Base application theme. -->
+        <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+            <!-- Customize your theme here. -->
+            <item name="colorPrimary">@color/primary_color</item>
+            <item name="colorAccent">@color/secondary_color</item>
+        </style>
+
+    <style name="forgot_pass">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#0866FF</item>
+    </style>
+
+    <style name="welcome_bac">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#222222</item>
+    </style>
+
+    <style name="create_a_ne">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#888888</item>
+    </style>
+
+    <style name="title_login">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#090A0A</item>
+    </style>
+
+    <style name="login_to_ac">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#888888</item>
+    </style>
+
+    <style name="by_continui">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#090A0A</item>
+    </style>
+
+    </resources>

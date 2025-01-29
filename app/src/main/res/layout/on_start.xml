@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    tools:context=".modules.OnStartScreenActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/hello_bot"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/hello_bot_ani" />
+
+    <LinearLayout
+        android:layout_width="416dp"
+        android:layout_height="126dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:layout_width="107dp"
+            android:layout_height="94dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="13dp"
+            android:contentDescription="@string/logo_text"
+            app:srcCompat="@drawable/main_logo" />
+
+        <TextView
+            android:id="@+id/skipText02"
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="27dp"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/skip_txt"
+            android:textSize="30sp"
+            android:textColor="@color/blue_A700"
+            android:translationY="-1.87sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="107dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/secondary_color"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/login_btn_txt"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/signup_btn"
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:backgroundTint="@color/secondary_color"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/Signup_btn_txt"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    tools:context=".modules.OnboardingScreen03">
+
+  <ImageView
+      android:layout_width="390dp"
+      android:layout_height="455dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.476"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.363"
+      app:srcCompat="@drawable/onboarding03" />
+
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center_horizontal|top"
+      android:lineHeight="29sp"
+      android:text="@string/save_and_share_topic"
+      android:textColor="@color/black"
+      android:textSize="24sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.733" />
+
+  <TextView
+      android:id="@+id/summarizema"
+      android:layout_width="354dp"
+      android:layout_height="84dp"
+      android:alpha="0.55"
+      android:gravity="center_horizontal|top"
+      android:lineSpacingExtra="3sp"
+      android:text="@string/save_share_content"
+      android:textColor="@color/black"
+      android:translationY="-1.31sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.491"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.837"
+      tools:ignore="TextSizeCheck" />
+
+  <LinearLayout
+      android:layout_width="409dp"
+      android:layout_height="92dp"
+      android:gravity="center_vertical"
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.978">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        app:srcCompat="@drawable/onboarding03_bar" />
+
+    <ImageButton
+        android:id="@+id/onboardingbtn03"
+        android:layout_width="60.01dp"
+        android:layout_height="60.01dp"
+        android:layout_marginStart="210dp"
+        android:background="@drawable/ob_navigate_oval_unselected"
+        android:contentDescription="@string/next_btn_description"
+        app:srcCompat="@drawable/arrowleft" />
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="409dp"
+      android:layout_height="99dp"
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.0">
+
+    <ImageView
+        android:layout_width="121dp"
+        android:layout_height="84dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="13dp"
+        android:contentDescription="@string/logo_text"
+        app:srcCompat="@drawable/main_logo" />
+
+    <TextView
+        android:id="@+id/skipText03"
+        android:layout_width="wrap_content"
+        android:layout_height="59dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="27dp"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/skip_txt"
+        android:textSize="20sp"
+        android:textColor="@color/blue_A700"
+        android:translationY="-1.87sp" />
+  </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

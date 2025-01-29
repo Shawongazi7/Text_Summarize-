@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".modelsheets.editSummeryModel">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/popup_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="212dp"
+                android:layout_height="212dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/edit_summery_img" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputSummeryName"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_name_lable"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/gray_400"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/secondary_color"
+                app:hintEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/summery_topic" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputDescription"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/description_hint_txt"
+                android:inputType="textMultiLine"
+                android:textColorHint="@color/gray_400"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/secondary_color"
+                app:hintEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/save_button"
+                android:layout_width="350dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/secondary_color"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/save_changes_btn"
+                android:textColor="@color/primary_color"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/summery_edit_cancel_btn"
+                android:layout_width="350dp"
+                android:layout_height="55dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="#EEEEEE"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/cancel_btn_text"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
