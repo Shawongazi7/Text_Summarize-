@@ -34,11 +34,11 @@
 
         <ImageView
             android:layout_width="107dp"
-            android:layout_height="94dp"
+            android:layout_height="110dp"
             android:layout_marginLeft="27dp"
             android:layout_marginTop="13dp"
             android:contentDescription="@string/logo_text"
-            app:srcCompat="@drawable/main_logo" />
+            app:srcCompat="@drawable/app_logo_1_white" />
 
         <TextView
             android:id="@+id/skipText02"

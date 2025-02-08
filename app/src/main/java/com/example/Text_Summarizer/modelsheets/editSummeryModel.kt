@@ -57,6 +57,7 @@ class editSummeryModel(private val textEntity: TextEntity) : BottomSheetDialogFr
             dismiss()
             val intent = Intent(requireContext(), ViewSavedSummmeryScreen::class.java)
             intent.putExtra("TEXT_ID", textEntity.id)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
 

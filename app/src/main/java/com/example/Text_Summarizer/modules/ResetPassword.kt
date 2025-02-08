@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.Text_Summarizer.R
 import com.example.Text_Summarizer.modules.LoginActivity
 import com.google.firebase.FirebaseApp
@@ -23,6 +24,8 @@ class ResetPassword : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reset_password)
+
+        window.statusBarColor = ContextCompat.getColor(this, R.color.log_reg_color)
 
         FirebaseApp.initializeApp(this)
 

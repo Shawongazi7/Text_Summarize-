@@ -57,7 +57,8 @@ class HomeScreenActivity : AppCompatActivity() {
         // Initialize Gemini model
         val apiKey = getString(R.string.api_key)
         generativeModel = GenerativeModel(
-            modelName = "gemini-1.5-flash",
+//            modelName = "gemini-1.5-flash",
+            modelName = "gemini-2.0-flash-001",
             apiKey = apiKey
         )
 
@@ -75,6 +76,12 @@ class HomeScreenActivity : AppCompatActivity() {
         setupInputHandling()
         setupBottomNavigation(bottom_navigation)
         setupSlider()
+
+        // Check if Extracted_text was sent from TextExtractionResultActivity
+        val extractedText = intent.getStringExtra("Extracted_text")
+        if (!extractedText.isNullOrEmpty()) {
+            editText.setText(extractedText)
+        }
 
         summey_btn.setOnClickListener {
             hideKeyboard()
@@ -248,11 +255,11 @@ class HomeScreenActivity : AppCompatActivity() {
         bottom_navigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.page_1 -> true
-//                R.id.page_2 -> {
-//                    startActivity(Intent(this, RecentScreenActivity::class.java))
-//                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-//                    true
-//                }
+                R.id.page_2 -> {
+                    startActivity(Intent(this, TextExtractionActivity::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    true
+                }
 
                 R.id.page_3 -> {
                     startActivity(Intent(this, SavedScreenActivity::class.java))
@@ -289,5 +296,10 @@ class HomeScreenActivity : AppCompatActivity() {
             @Suppress("DEPRECATION")
             return networkInfo.isConnected
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity() // This will close the app
     }
 }

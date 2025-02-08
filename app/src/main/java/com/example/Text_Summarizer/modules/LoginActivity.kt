@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.content.ContextCompat
 import com.example.Text_Summarizer.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -18,6 +19,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.firestore.FirebaseFirestore
 
 class LoginActivity : AppCompatActivity() {
     private var v_loginemail: EditText? = null
@@ -28,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
     private var v_gotof_pass: TextView? = null
     private var firebaseAuth: FirebaseAuth? = null
     private var googleSignInClient: GoogleSignInClient? = null
+    private var firestore: FirebaseFirestore? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +45,10 @@ class LoginActivity : AppCompatActivity() {
         v_guestLogin = findViewById(R.id.guestLogin)
         val googleSignInButton = findViewById<SignInButton>(R.id.googleSignInButton)
 
+        window.statusBarColor = ContextCompat.getColor(this, R.color.log_reg_color)
+
         firebaseAuth = FirebaseAuth.getInstance()
+        firestore = FirebaseFirestore.getInstance()
         val firebaseUser = firebaseAuth!!.currentUser
 
         if (firebaseUser != null) {
@@ -64,11 +70,28 @@ class LoginActivity : AppCompatActivity() {
                 firebaseAuth?.signInWithEmailAndPassword(mail, pass)
                     ?.addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(applicationContext, "Logged In", Toast.LENGTH_SHORT).show()
-                            finish()
-                            startActivity(Intent(this@LoginActivity, HomeScreenActivity::class.java))
+                            val user = firebaseAuth!!.currentUser
+                            if (user != null) {
+                                if (user.isEmailVerified) {
+                                    updateUserEmailVerifiedFlag(user.uid)
+                                } else {
+                                    Toast.makeText(
+                                        applicationContext,
+                                        "Please verify your email address.",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                    firebaseAuth!!.signOut()
+                                }
+                            }
                         } else {
-                            Toast.makeText(applicationContext, "Account Does Not Exist", Toast.LENGTH_SHORT).show()
+                            val exception = task.exception
+                            val errorMessage = exception?.message ?: "Unknown error"
+                            Toast.makeText(
+                                applicationContext,
+                                "Login Failed: $errorMessage",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            Log.e("LoginActivity", "Login failed", exception)
                         }
                     }
             }
@@ -133,6 +156,28 @@ class LoginActivity : AppCompatActivity() {
         val intent = Intent(this@LoginActivity, HomeScreenActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun updateUserEmailVerifiedFlag(userId: String) {
+        firestore!!.collection("users").document(userId)
+            .update("isEmailVerified", true)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(applicationContext, "Logged In", Toast.LENGTH_SHORT).show()
+                    finish()
+                    startActivity(Intent(this@LoginActivity, HomeScreenActivity::class.java))
+                } else {
+                    val exception = task.exception
+                    val errorMessage = exception?.message ?: "Unknown error"
+                    Toast.makeText(
+                        applicationContext,
+                        "Failed to update email verification flag: $errorMessage",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    Log.e("LoginActivity", "Failed to update email verification flag", exception)
+                    firebaseAuth!!.signOut()
+                }
+            }
     }
 
     companion object {

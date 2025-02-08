@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_color"
+    android:background="#FAF9FC"
     tools:context=".modules.OnboardingScreen03">
+
 
   <ImageView
       android:layout_width="390dp"
@@ -15,23 +16,22 @@
       app:layout_constraintHorizontal_bias="0.476"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.363"
-      app:srcCompat="@drawable/onboarding03" />
-
+      app:layout_constraintVertical_bias="0.333"
+      app:srcCompat="@drawable/onboarding_4" />
 
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:gravity="center_horizontal|top"
       android:lineHeight="29sp"
-      android:text="@string/save_and_share_topic"
+      android:text="@string/Image_to_text"
       android:textColor="@color/black"
       android:textSize="24sp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.733" />
+      app:layout_constraintVertical_bias="0.782" />
 
   <TextView
       android:id="@+id/summarizema"
@@ -40,7 +40,7 @@
       android:alpha="0.55"
       android:gravity="center_horizontal|top"
       android:lineSpacingExtra="3sp"
-      android:text="@string/save_share_content"
+      android:text="@string/Image_to_text_des"
       android:textColor="@color/black"
       android:translationY="-1.31sp"
       app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +48,7 @@
       app:layout_constraintHorizontal_bias="0.491"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.837"
+      app:layout_constraintVertical_bias="0.897"
       tools:ignore="TextSizeCheck" />
 
   <LinearLayout
@@ -83,6 +83,7 @@
       android:layout_height="99dp"
       android:orientation="horizontal"
       app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="0.0">
@@ -93,7 +94,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="13dp"
         android:contentDescription="@string/logo_text"
-        app:srcCompat="@drawable/main_logo" />
+        app:srcCompat="@drawable/app_logo_1_white" />
 
     <TextView
         android:id="@+id/skipText03"
@@ -103,8 +104,8 @@
         android:layout_marginTop="27dp"
         android:lineSpacingExtra="4sp"
         android:text="@string/skip_txt"
-        android:textSize="20sp"
         android:textColor="@color/blue_A700"
+        android:textSize="20sp"
         android:translationY="-1.87sp" />
   </LinearLayout>
 

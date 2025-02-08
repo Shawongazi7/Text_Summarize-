@@ -291,11 +291,11 @@ class ProfileActivity : AppCompatActivity() {
                     true
                 }
 
-//                R.id.page_2 -> {
-//                    navigateTo(RecentScreenActivity::class.java)
-//                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-//                    true
-//                }
+                R.id.page_2 -> {
+                    navigateTo(TextExtractionActivity::class.java)
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    true
+                }
 
                 R.id.page_3 -> {
                     navigateTo(SavedScreenActivity::class.java)
@@ -339,5 +339,12 @@ class ProfileActivity : AppCompatActivity() {
             .build()
 
         WorkManager.getInstance(context).enqueue(syncWorkRequest)
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, HomeScreenActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+        finish()
     }
 }

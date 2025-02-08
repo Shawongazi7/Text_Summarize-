@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class SaveSummaryActivity(private val summary: String, private val originalText: String) : BottomSheetDialogFragment() {
+class TextExtractionSavedActivity(private val originalText: String) : BottomSheetDialogFragment() {
 
     private val textViewModel: TextViewModel by viewModels()
 
@@ -27,7 +27,7 @@ class SaveSummaryActivity(private val summary: String, private val originalText:
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.activity_result_model_sheet, container, false)
+        return inflater.inflate(R.layout.text_extract_saved_activity, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,7 +36,7 @@ class SaveSummaryActivity(private val summary: String, private val originalText:
         val titleInputLayout: TextInputLayout = view.findViewById(R.id.inputSummeryName)
         val titleInput: TextInputEditText = titleInputLayout.editText as TextInputEditText
         val descriptionInput: EditText = view.findViewById(R.id.editTextTextMultiLine)
-        val saveButton: Button = view.findViewById(R.id.save_summery_btn)
+        val saveButton: Button = view.findViewById(R.id.save_text_btn)
         val cancelButton: Button = view.findViewById(R.id.cancel_save_btn)
 
         saveButton.setOnClickListener {
@@ -52,11 +52,11 @@ class SaveSummaryActivity(private val summary: String, private val originalText:
                 title = title,
                 date = date,
                 description = description,
-                summary = summary,
+                summary = "Summary not generated",
                 originalText = originalText
             )
             textViewModel.insertText(textEntity)
-            Toast.makeText(requireContext(), "Summary saved", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Text saved", Toast.LENGTH_SHORT).show()
             dismiss()
         }
 

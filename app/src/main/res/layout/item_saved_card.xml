@@ -20,9 +20,9 @@
             android:layout_height="wrap_content"
             android:text="@string/summery_topic"
             android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/blue_A700"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/blue_A700"/>
+            android:textStyle="bold" />
 
         <!-- Description -->
         <TextView
@@ -34,7 +34,7 @@
             android:textAppearance="?attr/textAppearanceBody2"
             android:textColor="?android:attr/textColorSecondary"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <!-- Footer Row -->
         <LinearLayout
@@ -51,9 +51,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/save_card_date"
                 android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/google_green"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="@color/google_green"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
     </LinearLayout>

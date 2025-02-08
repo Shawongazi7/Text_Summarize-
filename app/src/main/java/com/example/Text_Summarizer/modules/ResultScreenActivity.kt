@@ -73,11 +73,11 @@ class ResultScreenActivity : AppCompatActivity() {
         bottom_navigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.page_1 -> true
-//                R.id.page_2 -> {
-//                    startActivity(Intent(this, RecentScreenActivity::class.java))
-//                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-//                    true
-//                }
+                R.id.page_2 -> {
+                    startActivity(Intent(this, TextExtractionActivity::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    true
+                }
 
                 R.id.page_3 -> {
                     startActivity(Intent(this, SavedScreenActivity::class.java))

@@ -9,6 +9,7 @@
     <color name="input_hint_color">#414141</color>
     <color name="card_bg">#EAEAEA</color>
     <color name="secondory_btn_color">#EEEEEE</color>
+    <color name="log_reg_color">#E3F2FD</color>
 
     <!-- New colors for Google icon -->
     <color name="google_orange">#FFA726</color> <!-- Orange -->

@@ -80,12 +80,20 @@
 
             <TextView
                 android:id="@+id/card_description"
-                android:layout_width="360dp"
+                android:layout_width="370dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="5dp"
-                android:background="@color/white"
+                android:background="@drawable/input_filed_border"
+                android:backgroundTint="@color/white"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:overScrollMode="always"
+                android:padding="15dp"
+                android:scrollbars="vertical"
                 android:text="@string/description_contnt"
+                android:textAlignment="textStart"
+                android:textIsSelectable="true"
                 android:textSize="16sp" />
 
             <TextView
@@ -100,13 +108,20 @@
 
             <TextView
                 android:id="@+id/card_summery"
-                android:layout_width="360dp"
+                android:layout_width="372dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="5dp"
-                android:background="@color/white"
+                android:background="@drawable/input_filed_border"
+                android:backgroundTint="@color/white"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:overScrollMode="always"
+                android:padding="15dp"
+                android:scrollbars="vertical"
                 android:text="@string/summrized_txt"
                 android:textAlignment="textStart"
+                android:textIsSelectable="true"
                 android:textSize="16sp" />
 
             <TextView
@@ -121,12 +136,21 @@
 
             <TextView
                 android:id="@+id/card_org"
-                android:layout_width="360dp"
+                android:layout_width="372dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="5dp"
-                android:background="@color/white"
+                android:background="@drawable/input_filed_border"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:overScrollMode="always"
+                android:padding="15dp"
+                android:scrollbars="vertical"
                 android:text="@string/org_txt"
+                android:textAlignment="textStart"
+                android:textIsSelectable="true"
                 android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>

@@ -35,6 +35,7 @@ class savedSummeryDeleteModel(private val textEntity: TextEntity) : BottomSheetD
             textViewModel.deleteText(textEntity)
             dismiss()
             val intent = Intent(requireContext(), SavedScreenActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
 

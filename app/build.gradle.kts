@@ -100,19 +100,33 @@ android {
         implementation("org.reactivestreams:reactive-streams:1.0.4")
 
         implementation("androidx.fragment:fragment-ktx:1.6.1")
-//        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
 
 
-        implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-        implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-        implementation ("com.squareup.okhttp3:logging-interceptor:4.11.0")
+        implementation("com.squareup.retrofit2:retrofit:2.9.0")
+        implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+        implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
         implementation("androidx.work:work-runtime-ktx:2.10.0")
-//
-//        implementation("com.github.LottieFiles:dotlottie-android:0.4.1")
+
         implementation("com.airbnb.android:lottie:5.2.0")
+
+        implementation("com.google.android.gms:play-services-mlkit-text-recognition:19.0.1")
+        implementation("com.google.mlkit:text-recognition:16.0.1")
+
+        implementation("com.vanniktech:android-image-cropper:4.5.0")
+
+        //for barcode scanning
+        implementation("com.google.mlkit:barcode-scanning:17.3.0")
+        implementation("com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1")
+
+        //for language identification
+        implementation("com.google.mlkit:language-id:17.0.6")
+        implementation("com.google.android.gms:play-services-mlkit-language-id:17.0.0")
+        implementation("com.google.mlkit:translate:17.0.3")
+
 
     }
 }

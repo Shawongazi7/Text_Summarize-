@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import android.text.util.Linkify
 import com.example.Text_Summarizer.R
 import com.example.Text_Summarizer.modelsheets.editSummeryModel
 import com.example.Text_Summarizer.modelsheets.savedSummeryDeleteModel
@@ -49,6 +50,10 @@ class ViewSavedSummmeryScreen : AppCompatActivity() {
                     descriptionContent.text = textEntity.description
                     summarizedTxt.text = textEntity.summary
                     orgTxt.text = textEntity.originalText
+
+                    // Apply Linkify to make URLs clickable
+                    Linkify.addLinks(summarizedTxt, Linkify.WEB_URLS)
+                    Linkify.addLinks(orgTxt, Linkify.WEB_URLS)
 
                     copy_btn.setOnClickListener {
                         val clipboardManager =
@@ -89,12 +94,12 @@ class ViewSavedSummmeryScreen : AppCompatActivity() {
                     true
                 }
 
-//                R.id.page_2 -> {
-//                    val intent = Intent(this, RecentScreenActivity::class.java)
-//                    startActivity(intent)
-//                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-//                    true
-//                }
+                R.id.page_2 -> {
+                    val intent = Intent(this, TextExtractionActivity::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    true
+                }
 
                 R.id.page_3 -> true
                 R.id.page_4 -> {
@@ -107,5 +112,12 @@ class ViewSavedSummmeryScreen : AppCompatActivity() {
                 else -> false
             }
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, SavedScreenActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+        finish()
     }
 }

@@ -1,3 +1,4 @@
+//right image uploaded in imgbb and email varification for registration
 package com.example.Text_Summarizer.modules
 
 import android.app.ProgressDialog
@@ -15,12 +16,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.content.ContextCompat
 import com.example.Text_Summarizer.R
 import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import okhttp3.*
 import org.json.JSONObject
@@ -34,6 +35,7 @@ class RegisterActivity : AppCompatActivity() {
     private var v_signinfullname: EditText? = null
     private var v_signinemail: EditText? = null
     private var v_signinpassword: EditText? = null
+    private var v_signinconfirmpassword: EditText? = null
     private var v_signup: AppCompatButton? = null
     private var v_gotologin: TextView? = null
     private var v_profileImage: ImageView? = null
@@ -43,7 +45,7 @@ class RegisterActivity : AppCompatActivity() {
     private var firestore: FirebaseFirestore? = null
 
     private var imageUri: Uri? = null
-    private val imgbbApiKey = "5f5d65dc7d6239745cd2338eadd75e7b" // Replace with your ImgBB API key
+    private val imgbbApiKey = "5f5d65dc7d6239745cd2338eadd75e7b"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,9 +56,12 @@ class RegisterActivity : AppCompatActivity() {
         v_signinfullname = findViewById(R.id.signinfullname)
         v_signinemail = findViewById(R.id.signinemail)
         v_signinpassword = findViewById(R.id.signinpassword)
+        v_signinconfirmpassword = findViewById(R.id.signinconfirmpassword)
         v_signup = findViewById(R.id.signup)
         v_gotologin = findViewById(R.id.gotologin)
         v_profileImage = findViewById(R.id.profile_image)
+
+        window.statusBarColor = ContextCompat.getColor(this, R.color.log_reg_color)
 
         progressDialog = ProgressDialog(this)
         progressDialog!!.setMessage("Registering...")
@@ -74,27 +79,60 @@ class RegisterActivity : AppCompatActivity() {
             val fullName = v_signinfullname?.text.toString().trim()
             val mail = v_signinemail?.text.toString().trim()
             val pass = v_signinpassword?.text.toString().trim()
-            if (fullName.isEmpty() || mail.isEmpty() || pass.isEmpty()) {
+            val confirmPass = v_signinconfirmpassword?.text.toString().trim()
+            val passwordRegex =
+                "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@\$!%*?&])[A-Za-z\\d@\$!%*?&]{8,}$".toRegex()
+            if (fullName.isEmpty() || mail.isEmpty() || pass.isEmpty() || confirmPass.isEmpty()) {
                 Toast.makeText(applicationContext, "Fill All the Fields", Toast.LENGTH_SHORT).show()
             } else if (!Patterns.EMAIL_ADDRESS.matcher(mail).matches()) {
-                Toast.makeText(applicationContext, "Invalid email address", Toast.LENGTH_SHORT).show()
-            } else if (pass.length < 8) {
-                Toast.makeText(applicationContext, "Password should be at least 8 characters", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Invalid email address", Toast.LENGTH_SHORT)
+                    .show()
+            } else if (!pass.matches(passwordRegex)) {
+                Toast.makeText(
+                    applicationContext,
+                    "Password must be at least 8 characters long and include at least one letter, one number, and one special character",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else if (pass != confirmPass) {
+                Toast.makeText(applicationContext, "Passwords do not match", Toast.LENGTH_SHORT).show()
             } else {
                 progressDialog!!.setMessage("Creating user...")
                 progressDialog!!.show()
                 firebaseAuth!!.createUserWithEmailAndPassword(mail, pass)
                     .addOnCompleteListener { task: Task<AuthResult?> ->
                         if (task.isSuccessful) {
-                            uploadProfileImageToImgBB(fullName, mail)
+                            sendVerificationEmail(fullName, mail)
                         } else {
                             progressDialog!!.dismiss()
                             val exception = task.exception
                             val errorMessage = exception?.message ?: "Unknown error"
-                            Toast.makeText(applicationContext, "Failed to Register: $errorMessage", Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                applicationContext,
+                                "Failed to Register: $errorMessage",
+                                Toast.LENGTH_LONG
+                            ).show()
                             Log.e("RegisterActivity", "Registration failed", exception)
                         }
                     }
+            }
+        }
+    }
+
+    private fun sendVerificationEmail(fullName: String, mail: String) {
+        val user = firebaseAuth!!.currentUser
+        user?.sendEmailVerification()?.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                uploadProfileImageToImgBB(fullName, mail)
+            } else {
+                progressDialog!!.dismiss()
+                val exception = task.exception
+                val errorMessage = exception?.message ?: "Failed to send verification email."
+                Toast.makeText(
+                    applicationContext,
+                    errorMessage,
+                    Toast.LENGTH_LONG
+                ).show()
+                Log.e("RegisterActivity", "Failed to send verification email", exception)
             }
         }
     }
@@ -111,7 +149,10 @@ class RegisterActivity : AppCompatActivity() {
         if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.data != null) {
             imageUri = data.data
             try {
-                contentResolver.takePersistableUriPermission(imageUri!!, Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                contentResolver.takePersistableUriPermission(
+                    imageUri!!,
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION
+                )
             } catch (e: SecurityException) {
                 Log.e("RegisterActivity", "Failed to take persistable URI permission", e)
             }
@@ -168,12 +209,12 @@ class RegisterActivity : AppCompatActivity() {
         })
     }
 
-private fun bitmapToBase64(bitmap: Bitmap): String {
-    val byteArrayOutputStream = ByteArrayOutputStream()
-    bitmap.compress(Bitmap.CompressFormat.JPEG, 80, byteArrayOutputStream)
-    val byteArray = byteArrayOutputStream.toByteArray()
-    return Base64.encodeToString(byteArray, Base64.DEFAULT)
-}
+    private fun bitmapToBase64(bitmap: Bitmap): String {
+        val byteArrayOutputStream = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 80, byteArrayOutputStream)
+        val byteArray = byteArrayOutputStream.toByteArray()
+        return Base64.encodeToString(byteArray, Base64.DEFAULT)
+    }
 
     private fun resizeImage(imageUri: Uri): Uri {
         val inputStream: InputStream? = contentResolver.openInputStream(imageUri)
@@ -198,25 +239,37 @@ private fun bitmapToBase64(bitmap: Bitmap): String {
             Toast.makeText(applicationContext, "Error: User not found", Toast.LENGTH_SHORT).show()
             return
         }
+
         val userId = currentUser.uid
         val user: MutableMap<String, Any> = HashMap()
         user["fullName"] = fullName
         user["email"] = mail
+        user["isEmailVerified"] = false // Add this flag to indicate email verification status
         if (profileImageUrl != null) {
             user["profileImageUrl"] = profileImageUrl
         }
 
         firestore!!.collection("users").document(userId).set(user)
             .addOnCompleteListener { task: Task<Void?> ->
+                progressDialog!!.dismiss()
                 if (task.isSuccessful) {
-                    Toast.makeText(applicationContext, "Registered Successfully", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        applicationContext,
+                        "Registered Successfully. Please verify your email.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    firebaseAuth!!.signOut()
                     val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else {
                     val exception = task.exception
                     val errorMessage = exception?.message ?: "Unknown error"
-                    Toast.makeText(applicationContext, "Error saving user info: $errorMessage", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        applicationContext,
+                        "Error saving user info: $errorMessage",
+                        Toast.LENGTH_LONG
+                    ).show()
                     Log.e("RegisterActivity", "Failed to save user info", exception)
                 }
             }

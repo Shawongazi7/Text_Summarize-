@@ -6,11 +6,11 @@
         android:enabled="true"
         android:icon="@drawable/home_unselected"
         tools:ignore="MenuTitle" />
-<!--    <item-->
-<!--        android:id="@+id/page_2"-->
-<!--        android:enabled="true"-->
-<!--        android:icon="@drawable/recent_unselected"-->
-<!--        tools:ignore="MenuTitle" />-->
+    <item
+        android:id="@+id/page_2"
+        android:enabled="true"
+        android:icon="@drawable/text_unselected"
+        tools:ignore="MenuTitle" />
     <item
         android:id="@+id/page_3"
         android:enabled="true"

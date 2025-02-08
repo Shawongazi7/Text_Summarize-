@@ -5,6 +5,19 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.OVERRIDE_WIFI_CONFIG"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission
+        android:name="android.permission.NETWORK_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
     <!-- Permissions -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission
@@ -33,22 +46,27 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Text_Summarizer">
+        android:theme="@style/Theme.Text_Summarizer"
+        android:hardwareAccelerated="true">
 
         <activity android:name="com.example.Text_Summarizer.modules.HomeScreenActivity" />
         <activity android:name="com.example.Text_Summarizer.modules.LoginActivity" />
         <activity android:name="com.example.Text_Summarizer.modules.OnboardingScreen01" />
         <activity android:name="com.example.Text_Summarizer.modules.OnboardingScreen02" />
         <activity android:name="com.example.Text_Summarizer.modules.OnboardingScreen03" />
+        <activity android:name="com.example.Text_Summarizer.modules.OnboardingScreen04" />
         <activity android:name="com.example.Text_Summarizer.modules.OnStartScreenActivity" />
         <activity android:name="com.example.Text_Summarizer.modules.ProfileActivity" />
-        <activity android:name="com.example.Text_Summarizer.modules.RecentScreenActivity" />
         <activity android:name="com.example.Text_Summarizer.modules.RegisterActivity" />
         <activity android:name="com.example.Text_Summarizer.modules.ResetPassword" />
         <activity android:name="com.example.Text_Summarizer.modules.ResultScreenActivity" />
         <activity android:name="com.example.Text_Summarizer.modules.SavedScreenActivity" />
         <activity android:name="com.example.Text_Summarizer.modules.SaveSummaryActivity" />
         <activity android:name="com.example.Text_Summarizer.modules.ViewSavedSummmeryScreen" />
+        <activity android:name="com.example.Text_Summarizer.modules.TextExtractionActivity" />
+        <activity android:name="com.example.Text_Summarizer.modules.TextExtractionResultActivity" />
+        <activity android:name="com.example.Text_Summarizer.modules.TextExtractionSavedActivity" />
+        <activity android:name="com.example.Text_Summarizer.modules.TranslateActivity" />
         <activity
             android:name="com.example.Text_Summarizer.modelsheets.editSummeryModel"
             tools:ignore="Instantiatable" />
@@ -58,7 +76,7 @@
 
         <activity
             android:name="com.example.Text_Summarizer.MainActivity"
-            android:exported="true">
+            android:exported="true">l
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
