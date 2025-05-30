@@ -1,8 +1,3 @@
-//package com.example.Text_Summarizer.modules
-//
-//class TranslateActivity {
-//}
-
 package com.example.Text_Summarizer.modules
 
 import android.content.Intent
@@ -34,14 +29,13 @@ class TranslateActivity : AppCompatActivity() {
         window.statusBarColor = ContextCompat.getColor(this, R.color.light_cream)
 
         ans_back_btn.setOnClickListener {
-            finish() // Better than starting a new activity
+            finish()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
 
         bottom_navigation.selectedItemId = R.id.page_2
 
-        // Using setOnItemSelectedListener instead of deprecated setOnNavigationItemSelectedListener
         bottom_navigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.page_1 -> {

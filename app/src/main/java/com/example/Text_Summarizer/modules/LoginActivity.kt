@@ -131,7 +131,8 @@ class LoginActivity : AppCompatActivity() {
                 }
             } catch (e: ApiException) {
                 Log.w(TAG, "Google sign in failed", e)
-                Toast.makeText(this@LoginActivity, "Google sign in failed.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "Google sign in failed.", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }
@@ -142,12 +143,17 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val user = firebaseAuth!!.currentUser
-                    Toast.makeText(this@LoginActivity, "Google Sign-In successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Google Sign-In successful",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     startActivity(Intent(this@LoginActivity, HomeScreenActivity::class.java))
                     finish()
                 } else {
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
-                    Toast.makeText(this@LoginActivity, "Authentication Failed.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Authentication Failed.", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
     }

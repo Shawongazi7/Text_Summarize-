@@ -33,7 +33,7 @@ class ViewSavedSummmeryScreen : AppCompatActivity() {
         val editSummeryBtn: ImageButton = findViewById(R.id.edit_summery_btn)
         val copy_btn: ImageButton = findViewById(R.id.copy_btn)
         val textId: Long =
-            intent.getLongExtra("TEXT_ID", 1L) // get the id of the text entity you want to view
+            intent.getLongExtra("TEXT_ID", 1L) // get the id of the text entity to view
 
         val summeryTopic: TextView = findViewById(R.id.title)
         val saveCardDate: TextView = findViewById(R.id.card_date)

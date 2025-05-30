@@ -1,38 +1,3 @@
-//package com.example.Text_Summarizer.modules
-//
-//import android.content.Intent
-//import androidx.appcompat.app.AppCompatActivity
-//import android.os.Bundle
-//import android.widget.Button
-//import android.widget.TextView
-//import com.example.Text_Summarizer.R
-//
-//class OnStartScreenActivity : AppCompatActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.on_start)
-//
-//        val signup_btn : Button = findViewById(R.id.signup_btn)
-//        val login_btn : Button = findViewById(R.id.login_btn)
-//        val skipbtn02 : TextView = findViewById(R.id.skipText02)
-//
-//        signup_btn.setOnClickListener{
-//            val intent1 = Intent(this,RegisterActivity::class.java)
-//            startActivity(intent1)
-//        }
-//
-//        login_btn.setOnClickListener{
-//            val intent2 = Intent(this, LoginActivity::class.java)
-//            startActivity(intent2)
-//        }
-//        skipbtn02.setOnClickListener{
-//            val intent2 = Intent( this, HomeScreenActivity::class.java)
-//            startActivity(intent2)
-//        }
-//    }
-//}
-
-
 package com.example.Text_Summarizer.modules
 
 import android.content.Intent
@@ -53,7 +18,7 @@ class OnStartScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.on_start)
-//        window.statusBarColor = resources.getColor(R.color.primary_color)
+
         window.statusBarColor = ContextCompat.getColor(this, R.color.primary_color)
 
 
@@ -68,12 +33,11 @@ class OnStartScreenActivity : AppCompatActivity() {
         } else {
             // User is not logged in, show the OnStartScreenActivity
             val signup_btn: Button = findViewById(R.id.signup_btn)
-//            val dotLottieAnimationView = findViewById<DotLottieAnimation>(R.id.hello_bot)
+
             val login_btn: Button = findViewById(R.id.login_btn)
             val skipbtn02: TextView = findViewById(R.id.skipText02)
-//
-//            val dotLottieAnimationView = findViewById<DotLottieAnimation>(R.id.hello_bot)
-            // Initialize LottieAnimationView
+
+            // Initializing LottieAnimationView
             val lottieAnimationView = findViewById<LottieAnimationView>(R.id.hello_bot)
 
             // Optionally set the animation resource

@@ -304,13 +304,6 @@ class ProfileActivity : AppCompatActivity() {
                 }
 
                 R.id.page_4 -> {
-//                    val firebaseUser = FirebaseAuth.getInstance().currentUser
-//                    if (firebaseUser != null) {
-//                        startActivity(Intent(this, ProfileActivity::class.java))
-//                    } else {
-//                        Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
-//                        startActivity(Intent(this, OnStartScreenActivity::class.java))
-//                    }
                     val firebaseUser = FirebaseAuth.getInstance().currentUser
                     if (firebaseUser == null) {
                         Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()

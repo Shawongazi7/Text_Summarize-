@@ -149,7 +149,8 @@ class HomeScreenActivity : AppCompatActivity() {
 
         val model = GenerativeModelFutures.from(
             GenerativeModel(
-                modelName = "gemini-1.5-flash",
+//                modelName = "gemini-1.5-flash",
+                modelName = "gemini-2.0-flash-001",
                 apiKey = getString(R.string.api_key),
                 generationConfig = generationConfig
             )
